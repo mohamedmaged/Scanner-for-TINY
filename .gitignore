@@ -8,6 +8,7 @@
 *.ctxt
 *.xml
 *.iml
+*.name
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
