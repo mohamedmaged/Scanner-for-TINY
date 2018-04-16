@@ -1,33 +1,33 @@
-read  reserved word
-x  identifier
-;  special character
-if  reserved word
-0  number
-<  special character
-x  identifier
-then  reserved word
-{this is a comment}  comment
-fact  identifier
-:=  special character
-1  number
-;  special character
-repeat  reserved word
-fact  identifier
-:=  special character
-fact  identifier
-*  special character
-x  identifier
-;  special character
-x  identifier
-:=  special character
-x  identifier
--  special character
-1  number
-until  reserved word
-x  identifier
-=  special character
-0  number
-;  special character
-write  reserved word
-fact  identifier
-end  reserved word
+read			reserved word
+x			identifier
+;			special character
+if			reserved word
+0			number
+<			special character
+x			identifier
+then			reserved word
+{this is a comment}	comment
+fact			identifier
+:=			special character
+1			number
+;			special character
+repeat			reserved word
+fact			identifier
+:=			special character
+fact			identifier
+*			special character
+x			identifier
+;			special character
+x			identifier
+:=			special character
+x			identifier
+-			special character
+1			number
+until			reserved word
+x			identifier
+=			special character
+0			number
+;			special character
+write			reserved word
+fact			identifier
+end			reserved word

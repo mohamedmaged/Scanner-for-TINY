@@ -32,18 +32,18 @@ public class myScanner {
                 String st = Character.toString(c);
                 
                 if (" ".equals(st)){                                                     
-                    record = token + "  " + is;
+                     record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                 }
                 else if ("".equals(st)){
-                    record = token + "  " + is;
+                     record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                 }
                 else if (";".equals(st)){
-                    record = token + "  " + is;
-                    String endLine = ";" + "  " + "special character";
+                    record = token + "\t"+"\t"+"\t" + is;
+                    String endLine = ";" + "\t"+"\t"+"\t" + "special character";
                     j++;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     dataOutput.append(endLine + System.getProperty("line.separator"));
@@ -76,7 +76,10 @@ public class myScanner {
 
                 j++;
                 if(j == counter && !(";".equals(token))){
-                    record = token + "  " + is;
+                    if(!is.equals("comment"))
+                    record = token + "\t"+"\t"+"\t" + is;
+                    else
+                        record = token + "\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                 }
