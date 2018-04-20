@@ -1,10 +1,10 @@
 read			reserved word
-x			identifier
+x1			identifier
 ;			special character
 if			reserved word
 0			number
 <			special character
-x			identifier
+x1			identifier
 then			reserved word
 {this is a comment}	comment
 fact			identifier
@@ -16,17 +16,21 @@ fact			identifier
 :=			special character
 fact			identifier
 *			special character
-x			identifier
+x1			identifier
 ;			special character
-x			identifier
+x1			identifier
 :=			special character
-x			identifier
+x1			identifier
 -			special character
 1			number
 until			reserved word
-x			identifier
+x1			identifier
 =			special character
 0			number
+;			special character
+x			identifier
+:=			special character
+2			number
 ;			special character
 write			reserved word
 fact			identifier

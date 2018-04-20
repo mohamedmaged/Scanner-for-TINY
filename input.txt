@@ -1,9 +1,9 @@
-read x;
-if 0 < x then {this is a comment}
+read x1;
+if 0 < x1 then {this is a comment}
 fact := 1;
 repeat
-fact := fact * x;
-x := x - 1
-until x = 0;
+fact := fact * x1;
+x1 := x1 - 1
+until x1 = 0; x := 2;
 write fact
 end

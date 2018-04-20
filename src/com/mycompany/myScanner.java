@@ -35,11 +35,13 @@ public class myScanner {
                      record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
+                    is="";
                 }
                 else if ("".equals(st)){
                      record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
+                   // is="";
                 }
                 else if (";".equals(st)){
                     record = token + "\t"+"\t"+"\t" + is;
@@ -48,16 +50,21 @@ public class myScanner {
                     dataOutput.append(record + System.getProperty("line.separator"));
                     dataOutput.append(endLine + System.getProperty("line.separator"));
                     token = "";
+                    is="";
                 }
                 else if (Character.isAlphabetic(c)){
                     token += st;
                     if("if".equals(token) || "then".equals(token) || "else".equals(token) || "end".equals(token) || "repeat".equals(token) || "until".equals(token) || "read".equals(token) || "write".equals(token))
-                        is = "reserved word";
-                    else 
-                        is = "identifier";                           
+                            is = "reserved word";
+                    else {
+                        if(is.equals(""))
+                            is = "identifier";
+                    }
+
                 }
                 else if (Character.isDigit(c)){
-                    is = "number";
+                    if(is.equals(""))
+                        is = "number";
                     token += st;
                 }
                 else if ("{".equals(st)){						
