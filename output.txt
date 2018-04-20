@@ -1,5 +1,5 @@
 read			reserved word
-x1			identifier
+2x1			warning wrong identifier
 ;			special character
 if			reserved word
 0			number

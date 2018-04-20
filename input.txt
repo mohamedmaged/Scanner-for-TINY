@@ -1,4 +1,4 @@
-read x1;
+read 2x1;
 if 0 < x1 then {this i
 s a c
 omment}

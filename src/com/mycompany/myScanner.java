@@ -16,7 +16,7 @@ public class myScanner {
 
     //states:  1 = start, 2 = id, 2* = reserved, 3 = num, 4 = comment, 5 = symbol
     public void identifyTokens(String outputPath){
-        boolean flag=true;
+        boolean commemt_flag=true;
         char c;
         String record;
         int num = dataInput.size();
@@ -27,7 +27,7 @@ public class myScanner {
             String line = dataInput.get(i);
             int counter = dataInput.get(i).length();
 
-            if(flag) {
+            if(commemt_flag) {
                  token = "";
                  is = "";
             }
@@ -35,19 +35,19 @@ public class myScanner {
                 c = line.charAt(j);
                 String st = Character.toString(c);
                 
-                if (" ".equals(st) && flag){
+                if (" ".equals(st) && commemt_flag){
                      record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                     is="";
                 }
-             /*   else if ("".equals(st) && flag){  //possible unnecessary piece of code
+             /*   else if ("".equals(st) && commemt_flag){  //possible unnecessary piece of code
                      record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                    // is="";
                 }*/
-                else if (";".equals(st) && flag){
+                else if (";".equals(st) && commemt_flag){
                     record = token + "\t"+"\t"+"\t" + is;
                     String endLine = ";" + "\t"+"\t"+"\t" + "special character";
                     j++;
@@ -56,43 +56,46 @@ public class myScanner {
                     token = "";
                     is="";
                 }
-                else if (Character.isAlphabetic(c) && flag){
+                else if (Character.isAlphabetic(c) && commemt_flag){
                     token += st;
                     if("if".equals(token) || "then".equals(token) || "else".equals(token) || "end".equals(token) || "repeat".equals(token) || "until".equals(token) || "read".equals(token) || "write".equals(token))
                             is = "reserved word";
                     else {
                         if(is.equals(""))
                             is = "identifier";
+                        if(is.equals("number"))
+                            is="warning wrong identifier" ;
+
                     }
 
                 }
-                else if (Character.isDigit(c) &&flag){
+                else if (Character.isDigit(c) &&commemt_flag){
                     if(is.equals(""))
                         is = "number";
                     token += st;
                 }
-                else if ("{".equals(st) | ! flag){
+                else if ("{".equals(st) | ! commemt_flag){
                     is = "comment";
                     while(c != '}'){
                         if(j < counter )
                         c = line.charAt(j++);
                         else {
-                            flag = false;
+                            commemt_flag = false;
                             break;
                         }
                         st = Character.toString(c);
                         token += st;
-                        flag=true;
+                        commemt_flag=true;
                     }
                     j--;
                 }
-                else if (("/".equals(st) || "*".equals(st) || "+".equals(st) || "-".equals(st)|| "=".equals(st)|| "<".equals(st)|| "(".equals(st)|| ")".equals(st)|| ":".equals(st)) && flag ){
+                else if (("/".equals(st) || "*".equals(st) || "+".equals(st) || "-".equals(st)|| "=".equals(st)|| "<".equals(st)|| "(".equals(st)|| ")".equals(st)|| ":".equals(st)) && commemt_flag ){
                     is = "special character";
                     token += st;
                 }
 
                 j++;
-                if((j == counter && !(";".equals(token)))&& flag ){
+                if((j == counter && !(";".equals(token)))&& commemt_flag ){
                     if(!is.equals("comment"))
                     record = token + "\t"+"\t"+"\t" + is;
                     else
