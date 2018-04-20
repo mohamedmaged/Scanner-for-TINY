@@ -41,12 +41,12 @@ public class myScanner {
                     token = "";
                     is="";
                 }
-                else if ("".equals(st) && flag){
+             /*   else if ("".equals(st) && flag){  //possible unnecessary piece of code
                      record = token + "\t"+"\t"+"\t" + is;
                     dataOutput.append(record + System.getProperty("line.separator"));
                     token = "";
                    // is="";
-                }
+                }*/
                 else if (";".equals(st) && flag){
                     record = token + "\t"+"\t"+"\t" + is;
                     String endLine = ";" + "\t"+"\t"+"\t" + "special character";
