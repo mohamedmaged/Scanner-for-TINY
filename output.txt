@@ -1,5 +1,5 @@
 read			reserved word
-2x1			warning wrong identifier
+x1			identifier
 ;			special character
 if			reserved word
 0			number
@@ -24,13 +24,7 @@ x1			identifier
 -			special character
 1			number
 until			reserved word
-x1			identifier
-=			special character
-0			number
-;			special character
-x			identifier
-:=			special character
-2			number
+x1=0			special character
 ;			special character
 write			reserved word
 fact			identifier
